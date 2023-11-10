@@ -39,14 +39,14 @@ ______________[ {val["data"]} ]______________
             try:
                 os.makedirs('Impr_Com')
 
-            except:
+            finally:
                 print(os.listdir())
                 arquivo = open("Impr_com/Texto_Impresso.txt", 'w')
                 arquivo.write(text_imp)
                 arquivo.close()
 
                 try:
-                    """lista = win32print.EnumPrinters(2)
+                    lista = win32print.EnumPrinters(2)
                     impr = lista[6]
                     win32print.SetDefaultPrinter(impr[2])
 
@@ -54,7 +54,7 @@ ______________[ {val["data"]} ]______________
                     lista_arquivos = os.listdir(diretorio)
 
                     for arquivo in lista_arquivos:
-                        win32api.ShellExecute(0, "print", arquivo, None, diretorio, 0)"""
+                        win32api.ShellExecute(0, "print", arquivo, None, diretorio, 0)
                     print('tou na impressao')
 
                 finally:
@@ -64,6 +64,7 @@ ______________[ {val["data"]} ]______________
                     self.telefone_inp.delete(0, 50)
                     self.pet_inp.delete(0, 50)
                     self.obser_inp.delete(0, 500)
+
         # Definições da tela
 
         self.title("Teste tela 1")
@@ -123,8 +124,8 @@ ______________[ {val["data"]} ]______________
 
         pos_list = ['1º', '2º', '3º', '4º', '5º', '6º', '7º', '8º', '9º', '10º', '11º', '12º', '13º', '14º', '15º',
                     '16º', '17º', '18º', '19º', '20º', '21º']
-        self.pos_inp = ctk.CTkComboBox(self.form_frame, font=('sans', 20), width=200, button_color='light blue'
-                                       , border_color='light blue', border_width=2, values=pos_list,
+        self.pos_inp = ctk.CTkComboBox(self.form_frame, font=('sans', 20), width=200, button_color='light blue',
+                                       border_color='light blue', border_width=2, values=pos_list,
                                        justify='center', dropdown_font=('sans', 10, 'bold'),
                                        dropdown_hover_color='light blue')
         self.pos_inp.grid(row=3, column=1, pady=(10, 0), padx=5)
@@ -132,8 +133,9 @@ ______________[ {val["data"]} ]______________
         proc_list = ['Banho e Higiênica', 'Tosa Padrão 7', 'Tosa Padrão 10',
                      'Tosa Completa 7', 'Tosa Completa 10', 'Tosa Bebê']
 
-        self.procedimento_inp = ctk.CTkComboBox(self.form_frame, font=('sans', 14), width=200, button_color='light blue'
-                                                , border_color='light blue', border_width=2, values=proc_list,
+        self.procedimento_inp = ctk.CTkComboBox(self.form_frame, font=('sans', 14), width=200,
+                                                button_color='light blue', border_color='light blue',
+                                                border_width=2, values=proc_list,
                                                 justify='center', dropdown_font=('sans', 10, 'bold'),
                                                 dropdown_hover_color='light blue')
         self.procedimento_inp.grid(row=4, column=1, pady=(10, 0))
