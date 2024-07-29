@@ -67,7 +67,7 @@ ______________[ {val["data"]} ]______________
 
         # Definições da tela
 
-        self.title("Teste tela 1")
+        self.title(f"Comandas {datetime.now().strftime("%d/%m/%Y")}")
         self.geometry("530x500")
         self.resizable(height=False, width=False)
 
