@@ -70,6 +70,7 @@ ______________[ {val["data"]} ]______________
         self.title(f"Comandas {datetime.now().strftime("%d/%m/%Y")}")
         self.geometry("530x500")
         self.resizable(height=False, width=False)
+        self._set_appearance_mode("light")
 
         # Parte do Header da página
 
