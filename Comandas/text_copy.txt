@@ -1,20 +1,17 @@
 
-____________[ 19/08/2024 ]___________
+     Pet's Food - Graciliano
 =====================================
-    PetsFood [ 1º ]        21:16
+                Dados
+                
+    Nome: fdsdfdsfsdfsd
+    Número: 
+    Endereço: 
 =====================================
-
-        Dono:                       
-
-        Pet: 
-
-        Telefone: 
-
-        Procedimeno: Banho e Higiênica        
-
-        Observações:
-
+                Pedido
+            
     
-
-=====================================    
+    
+=====================================
+    Valor: R$ 58  Status: ----
+                            
     

@@ -10,7 +10,7 @@ def imprimir():
     impr = lista[6]
     win32print.SetDefaultPrinter(impr[2])
 
-    diretorio = "C:/Users/waldo/python_projeto/Comandas/Comandas"
+    diretorio = "C:/Users/waldo/ComandasPet/Comandas"
     lista_arquivos = os.listdir(diretorio)
 
     for arquivo in lista_arquivos:
@@ -65,11 +65,17 @@ ____________[ {data_ban["date"]} ]___________
 
 
 def ImpresEntrega():
-    data_entr = {"client": clientdelivery_entry.get(), "number": numberdelivery_entry.get(), "adress": adress_entry.get(),
-                 "items": items_entry.get(), "value": value_entry.get(), "payment": pag_var.get()}
+
+    try:
+        data_entr = {"client": clientdelivery_entry.get(), "number": numberdelivery_entry.get(), "adress": adress_entry.get(),
+                 "items": items_entry.get(), "value": round(int(value_entry.get()),2), "payment": pag_var.get()}
+
+    except:
+        data_entr = {"client": clientdelivery_entry.get(), "number": numberdelivery_entry.get(), "adress": adress_entry.get(),
+                 "items": items_entry.get(), "value": value_entry.get(), "payment": pag_var.get()}    
 
     text_imp_ent =f"""
-        Pet's Food - Graciliano
+     Pet's Food - Graciliano
 =====================================
                 Dados
                 
@@ -77,12 +83,12 @@ def ImpresEntrega():
     Número: {data_entr['number']}
     Endereço: {data_entr['adress']}
 =====================================
-            Pedido
+                Pedido
             
     {data_entr["items"]}
     
 =====================================
-    Valor:    {data_entr["value"]}  Status: {data_entr["payment"]}
+    Valor: R$ {data_entr["value"]}  Status: {data_entr["payment"]}
                             
     """
 
