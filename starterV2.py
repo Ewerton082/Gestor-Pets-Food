@@ -70,18 +70,18 @@ def ImpresEntrega():
 
     text_imp_ent =f"""
         Pet's Food - Graciliano
-    =================================
+=====================================
                 Dados
                 
     Nome: {data_entr['client']}
     Número: {data_entr['number']}
     Endereço: {data_entr['adress']}
-    =================================
+=====================================
             Pedido
             
     {data_entr["items"]}
     
-    =================================
+=====================================
     Valor:    {data_entr["value"]}  Status: {data_entr["payment"]}
                             
     """
@@ -118,7 +118,6 @@ app.geometry("350x460")
 app.resizable(False, False)
 app.title(f"Pets Food  |  {datetime.now().strftime("%d/%m/%Y")}")
 app.iconbitmap("icon.ico")
-app.iconwindow("./icon.ico")
 
 ### Fim de Bloco ###
 
