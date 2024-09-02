@@ -68,11 +68,13 @@ def ImpresEntrega():
 
     try:
         data_entr = {"client": clientdelivery_entry.get(), "number": numberdelivery_entry.get(), "adress": adress_entry.get(),
-                 "items": items_entry.get(), "value": round(int(value_entry.get()),2), "payment": pag_var.get()}
+                 "items": items_entry.get(), "value": round(int(value_entry.get()),2), "payment": pag_var.get(),
+                 "obs": obsdelivery_entry.get()}
 
     except:
         data_entr = {"client": clientdelivery_entry.get(), "number": numberdelivery_entry.get(), "adress": adress_entry.get(),
-                 "items": items_entry.get(), "value": value_entry.get(), "payment": pag_var.get()}    
+                 "items": items_entry.get(), "value": value_entry.get(), "payment": pag_var.get(),
+                 "obs": obsdelivery_entry.get()}    
 
     text_imp_ent =f"""
      Pet's Food - Graciliano
@@ -89,6 +91,10 @@ def ImpresEntrega():
     
 =====================================
     Valor: R$ {data_entr["value"]}  Status: {data_entr["payment"]}
+=====================================
+    OBSERVAÇÔES:
+
+    {data_entr["obs"]}
                             
     """
 
@@ -112,6 +118,7 @@ def ImpresEntrega():
             adress_entry.delete(0, 50)
             items_entry.delete(0, 500)
             value_entry.delete(0, 50)
+            obsdelivery_entry.delete(0,100)
 
 
 ### Definindo Configurações e Alguns Detalhes do Aplicativo ###
@@ -120,7 +127,7 @@ ctk.set_appearance_mode("light")
 ctk.set_default_color_theme("blue")
 
 app = ctk.CTk()
-app.geometry("350x460")
+app.geometry("350x515")
 app.resizable(False, False)
 app.title(f"Pets Food  |  {datetime.now().strftime("%d/%m/%Y")}")
 app.iconbitmap("icon.ico")
@@ -132,7 +139,7 @@ app.iconbitmap("icon.ico")
 title = ctk.CTkLabel(app, text="Pets Food", font=("Times", 36, "bold"), width=350, height=35)
 title.grid(row=1, column=1)
 
-tabview = ctk.CTkTabview(app, width=325, height=400, corner_radius=15, border_width=2
+tabview = ctk.CTkTabview(app, width=330, height=400, corner_radius=15, border_width=2
                          , fg_color="#c4c2c2", segmented_button_fg_color="grey", )
 tabview.grid(row=2, column=1)
 tabview.add("Pet Shop")
@@ -201,7 +208,7 @@ obs_entry.grid(row=6, column=0, pady=3, columnspan=2)
 submit_buttom = ctk.CTkButton(tabview.tab("Pet Shop"), width=290, corner_radius=10, border_width=2,
                               font=("Times", 24, "bold"),
                               text="Imprimir Comanda", command=ImpresBanho)
-submit_buttom.grid(row=7, column=0, columnspan=2, pady=15)
+submit_buttom.grid(row=7, column=0, columnspan=2, pady=7)
 
 ### Fim do Bloco ###
 
@@ -250,21 +257,16 @@ Pix_radio.grid(row=7, column=0, pady=8, columnspan=2)
 din_radio = ctk.CTkRadioButton(tabview.tab("Entregas"), text="Cartão", variable=pag_var, value="Cartão", width=50)
 din_radio.grid(row=7, column=1, pady=8)
 
+obsdelivery_text = ctk.CTkLabel(tabview.tab("Entregas"),width=120, font=("Times", 23, "bold"), text="Observações:")
+obsdelivery_text.grid(row=8, column=0, columnspan=2)
+obsdelivery_entry = ctk.CTkEntry(tabview.tab("Entregas"), width=290, placeholder_text="Tem alguma informação a mais?",
+                                 fg_color="white", border_color="black",border_width=2, corner_radius=8,
+                                 font=("Times", 14, "bold"))
+obsdelivery_entry.grid(row=9, column=0, columnspan=2)
+
 submitdelivery_buttom = ctk.CTkButton(tabview.tab("Entregas"), width=290, corner_radius=10, border_width=2,
                                       font=("Times", 24, "bold"),
                                       text="Realizar Entrega", command=ImpresEntrega)
-submitdelivery_buttom.grid(row=8, column=0, columnspan=2, pady=15)
-
-### Fim do Bloco ###
-
-
-"""
-obsdelivery_text = ctk.CTkLabel(tabview.tab("Entregas"),width=120, font=("Times", 23, "bold"), text="Observações:")
-obsdelivery_text.grid(row=8, column=0)
-obsdelivery_entry = ctk.CTkEntry(tabview.tab("Entregas"), width=150, placeholder_text="Algo pra anotar?",
-                                 fg_color="white", border_color="black",border_width=2, corner_radius=8,
-                                 font=("Times", 14, "bold"))
-obsdelivery_entry.grid(row=8, column=1)
-"""
+submitdelivery_buttom.grid(row=10, column=0, columnspan=2, pady=15)
 
 app.mainloop()
