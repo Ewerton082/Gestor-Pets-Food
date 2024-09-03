@@ -5,7 +5,7 @@ import win32print
 import win32api
 
 
-def imprimir():
+def imprimir(QTD):
     lista = win32print.EnumPrinters(2)
     impr = lista[6]
     win32print.SetDefaultPrinter(impr[2])
@@ -13,9 +13,10 @@ def imprimir():
     diretorio = "C:/Users/waldo/ComandasPet/Comandas"
     lista_arquivos = os.listdir(diretorio)
 
-    for arquivo in lista_arquivos:
-        win32api.ShellExecute(0, "print", arquivo, None, diretorio, 0)
-    print('tou na impressao')
+    for i in range(0,QTD+1,1):
+        for arquivo in lista_arquivos:
+            win32api.ShellExecute(0, "print", arquivo, None, diretorio, 0)
+            print(i)
 
 
 def ImpresBanho():
@@ -53,7 +54,7 @@ ____________[ {data_ban["date"]} ]___________
         arquivo.close()
 
         try:
-            imprimir()
+            imprimir(1)
 
         finally:
 
@@ -108,7 +109,7 @@ def ImpresEntrega():
         arquivo.close()
 
         try:
-            imprimir()
+            imprimir(2)
 
         finally:
 
