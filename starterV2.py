@@ -13,10 +13,9 @@ def imprimir(QTD):
     diretorio = "C:/Users/waldo/ComandasPet/Comandas"
     lista_arquivos = os.listdir(diretorio)
 
-    for i in range(0,QTD+1,1):
+    for i in range(0,QTD,1):
         for arquivo in lista_arquivos:
             win32api.ShellExecute(0, "print", arquivo, None, diretorio, 0)
-            print(i)
 
 
 def ImpresBanho():
