@@ -1,21 +1,20 @@
 
-     Pet's Food - Graciliano
+____________[ 25/12/2024 ]___________
 =====================================
-                Dados
-                
-    Nome: 
-    Número: 
-    Endereço: 
+    PetsFood [ 1º ]        04:38
 =====================================
-                Pedido
-            
-    
-    
-=====================================
-    Valor: R$   Status: ----
-=====================================
-    OBSERVAÇÔES:
+
+        Dono: Jose                      
+
+        Pet: TesteTeste
+
+        Telefone: 999994444
+
+        Procedimeno: Banho e Higiênica        
+
+        Observações:
 
     
-                            
+
+=====================================    
     
