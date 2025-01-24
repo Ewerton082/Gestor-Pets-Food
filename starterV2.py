@@ -99,6 +99,16 @@ def ImpresEntrega():
                      "adress": adress_entry.get(),
                      "items": items_entry.get(), "value": value_entry.get(), "payment": pag_var.get(),
                      "obs": obsdelivery_entry.get()}
+    finally:
+
+        if data_entr["items"].count("|") >= 1:
+            sep_item_list = data_entr["items"].split("|")
+            printed_text = ""
+
+            for item in sep_item_list:
+                printed_text = printed_text.strip() + "\n   "
+                
+            data_entr["items"] = printed_text
 
     text_imp_ent = f"""
      Pet's Food - Graciliano
