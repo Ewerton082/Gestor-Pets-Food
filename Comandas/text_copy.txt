@@ -1,20 +1,24 @@
 
-____________[ 26/12/2024 ]___________
+     Pet's Food - Graciliano
 =====================================
-    PetsFood [ 1º ]        06:56
+                Dados
+                
+    Nome: 
+    Número: 
+    Endereço: 
 =====================================
-
-        Dono:                       
-
-        Pet: 
-
-        Telefone: 
-
-        Procedimeno: Banho e Higiênica        
-
-        Observações:
+                Pedido
+            
+    5x magnus rp 50,00 
+ 10x canex composto 100,00 
+ 2x friskies castrado 33,00
 
     
+=====================================
+    Valor: R$   Status: ----
+=====================================
+    OBSERVAÇÔES:
 
-=====================================    
+    
+                            
     
