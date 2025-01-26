@@ -106,9 +106,10 @@ def ImpresEntrega():
             printed_text = ""
 
             for item in sep_item_list:
-                printed_text = printed_text.strip() + "\n   "
-                
+                printed_text =  printed_text + item + "\n"
+
             data_entr["items"] = printed_text
+
 
     text_imp_ent = f"""
      Pet's Food - Graciliano
@@ -175,7 +176,7 @@ ctk.set_default_color_theme("blue")
 app = ctk.CTk()
 app.geometry("370x515")
 app.resizable(False, False)
-app.title(f"Pets Food  |  {datetime.now().strftime("%d/%m/%Y")}")
+app.title(f"Pets Food  |  {datetime.now().strftime('%d/%m/%Y')}")
 app.iconbitmap("icon.ico")
 
 # Fim de Bloco
