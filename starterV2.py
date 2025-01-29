@@ -6,6 +6,7 @@ import win32api
 from tkcalendar import DateEntry
 from tkinter.ttk import Treeview
 import sqlite3
+import pyperclip
 
 # Conectar Banco de Dados
 banco = sqlite3.connect("Clientes_Pet.db")
@@ -70,7 +71,7 @@ ____________[ {data_ban["date"]} ]___________
         os.makedirs("Comandas")
 
     except:
-        print(os.listdir())
+
         arquivo = open("Comandas/text_copy.txt", 'w')
         arquivo.write(text_imp_ban)
         arquivo.close()
@@ -101,18 +102,19 @@ def ImpresEntrega():
                      "obs": obsdelivery_entry.get()}
     finally:
 
-        if data_entr["items"].count("|") >= 1:
+        data_entr["items"] = data_entr["items"].replace('|', "\n")
+        """if data_entr["items"].count("|") >= 1:
             sep_item_list = data_entr["items"].split("|")
             printed_text = ""
 
             for item in sep_item_list:
-                printed_text =  printed_text + item + "\n"
+                printed_text =  printed_text + item + "     \n"
 
-            data_entr["items"] = printed_text
+            data_entr["items"] = printed_text"""
 
 
     text_imp_ent = f"""
-     Pet's Food - Graciliano
+_______Pet's Food - Graciliano
 =====================================
                 Dados
                 
@@ -122,7 +124,7 @@ def ImpresEntrega():
 =====================================
                 Pedido
             
-    {data_entr["items"]}
+ {data_entr["items"]}
     
 =====================================
     Valor: R$ {data_entr["value"]}  Status: {data_entr["payment"]}
@@ -137,7 +139,7 @@ def ImpresEntrega():
         os.makedirs("Comandas")
 
     except:
-        print(os.listdir())
+        pyperclip.copy(text_imp_ent)
         arquivo = open("Comandas/text_copy.txt", 'w')
         arquivo.write(text_imp_ent)
         arquivo.close()
