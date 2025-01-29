@@ -114,7 +114,7 @@ def ImpresEntrega():
 
 
     text_imp_ent = f"""
-_______Pet's Food - Graciliano
+        Pet's Food - Graciliano
 =====================================
                 Dados
                 

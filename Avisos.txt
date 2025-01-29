@@ -1,0 +1,7 @@
+Uma das Bibliotecas que usamos está com um erro de importação então para corrigir entre no seguinte diretorio
+
+nome_da_venv/lib/site-packages/tkcalendar/calendar.py
+
+nesse arquivo você vai adicionar uma nova importação chamada " from babel.numbers import * "
+
+após isso pode rodar o comando " pyinstaller -w --onefile starterV2.py " que criará seu executavel.
